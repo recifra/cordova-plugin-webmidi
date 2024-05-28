@@ -1,4 +1,4 @@
-WebMIDIAPIShimForiOS
+WebMIDI API - Cordova Plugin for iOS
 ====================
 ## Installation
 
