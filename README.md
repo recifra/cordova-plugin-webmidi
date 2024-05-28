@@ -1,4 +1,4 @@
-WebMIDI API - Cordova Plugin for iOS
+Web MIDI API - Cordova Plugin Polyfill for iOS
 ====================
 ## Installation
 
