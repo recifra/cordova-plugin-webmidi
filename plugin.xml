@@ -1,49 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cordova-plugin-chordino" version="1.0.0">
-    <name>Chordino</name>
-    <description>Detect chord from microphone</description>
-    <license>GPLv3</license>
-    <keywords>cordova,chordino</keywords>
+        id="cordova-plugin-webmidi" version="1.0.0">
+    <name>WebMIDI</name>
+    <description>Web MIDI API for Cordova on iOS</description>
+    <license>Apache-2.0</license>
+    <keywords>webmidi,midi,api,web</keywords>
     <engines>
         <engine name="cordova" version=">=10.0.0"/>
-        <engine name="cordova-android" version=">=9.0.0"/>
+        <engine name="apple-ios" version=">=8.0" />
     </engines>
-    <js-module src="www/chordino.js" name="chordino">
-        <clobbers target="chordino" />
+    <js-module src="www/webmidi.js" name="webmidi">
+        <clobbers target="WebMidi" />
     </js-module>
-    <platform name="android">
-        <config-file target="config.xml" parent="/*">
-            <preference name="GradlePluginKotlinEnabled" value="true" />
-            <feature name="Chordino">
-                <param name="android-package" value="com.recifra.cordova.plugin.chordino.Chordino" />
-            </feature>
-        </config-file>
-        <config-file target="AndroidManifest.xml" parent="/manifest">
-            <uses-permission android:name="android.permission.RECORD_AUDIO" />
-        </config-file>
-        <source-file src="src/android/Chordino.kt" target-dir="app/src/main/kotlin/com/recifra/cordova/plugin/chordino" />
-        <source-file src="src/android/Extractor.kt" target-dir="app/src/main/kotlin/com/recifra/chordino" />
-        <source-file src="src/android/AudioCapture.kt" target-dir="app/src/main/kotlin/com/recifra/chordino" />
-
-        <source-file src="libs/android/chordino" target-dir="libs" />
-
-        <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
-    </platform>
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
-            <feature name="Chordino">
-                <param name="ios-package" value="Chordino"/>
+            <feature name="WebMIDI">
+                <param name="ios-package" value="WebMIDI"/>
             </feature>
         </config-file>
-        <config-file target="*-Info.plist" parent="NSMicrophoneUsageDescription">
-            <string>This app needs microphone access</string>
-        </config-file>
-        <source-file src="src/ios/Chordino.swift" />
-        <source-file src="src/ios/AudioCapture.swift" />
+        <source-file src="src/ios/WebMIDIAPIPolyfill/WebMIDI.h" />
+        <source-file src="src/ios/WebMIDIAPIPolyfill/WebMIDI.m" />
 
-        <framework src="CoreAudio.framework" weak="true"/>
-        <framework src="AudioToolbox.framework" weak="true"/>
-        <framework src="libs/ios/Chordino.xcframework" custom="true" embed="true" />
+        <source-file src="src/ios/WebMIDIAPIPolyfill/MIDIDriver.h" />
+        <source-file src="src/ios/WebMIDIAPIPolyfill/MIDIDriver.m" />
+
+        <source-file src="src/ios/WebMIDIAPIPolyfill/MIDIParser.h" />
+        <source-file src="src/ios/WebMIDIAPIPolyfill/MIDIParser.m" />
+
+        <framework src="CoreMIDI.framework" />
     </platform>
 </plugin>
