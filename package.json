@@ -1,0 +1,32 @@
+{
+  "name": "cordova-plugin-chordino",
+  "version": "1.0.4",
+  "description": "Detect chord from microphone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/recifra/cordova-plugin-chordino.git"
+  },
+  "keywords": [
+    "cordova",
+    "chordino"
+  ],
+  "author": "",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/recifra/cordova-plugin-chordino/issues"
+  },
+  "homepage": "https://github.com/recifra/cordova-plugin-chordino#readme",
+  "cordova": {
+    "id": "cordova-plugin-chordino",
+    "platforms": [
+      "android"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
