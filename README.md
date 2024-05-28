@@ -1,5 +1,11 @@
 WebMIDIAPIShimForiOS
 ====================
+## Installation
+
+Execute from the projects root folder:
+
+    $ cordova plugin add cordova-plugin-webmidi
+
 This is a shim to enable [Web MIDI API](http://www.w3.org/TR/webmidi/) on iOS. [WebMIDIAPIPolyfill.js](WebMIDIAPIPolyfill/WebMIDIAPIPolyfill.js) is the bridge script to invoke iOS native Core MIDI APIs. And [WebViewDelegate.m](WebMIDIAPIPolyfill/WebViewDelegate.m) is the receptor for informal URL schemes triggered by the bridge script. You can build a hybrid Web MIDI application with using them.
 
 ![sample screen](images/sample_screen.png)
@@ -12,6 +18,8 @@ Known issues
 
 Related projects
 --------------------
+This project is based on [WebMIDIAPIShimForiOS](https://github.com/mizuhiki/WebMIDIAPIShimForiOS)
+
 The idea was brought from [WebMIDIAPIShim](https://github.com/cwilso/WebMIDIAPIShim) by Chris Wilson. WebMIDIAPIPolyfill.js in this project was derived from his great work.
 
 License
