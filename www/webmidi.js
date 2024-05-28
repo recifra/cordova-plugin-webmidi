@@ -229,21 +229,21 @@
         _callback_removeDestination = function(index) {
             var output = _this._outputs[index];
 
-            output._setState(MIDIPortDeviceState.disconnected);
-            output._setConnection(MIDIPortConnectionState.pending);
-
             _this._outputs.splice(index, 1);
             _this.outputs = _createMIDIPortMap(_this._outputs);
+
+            output._setState(MIDIPortDeviceState.disconnected);
+            output._setConnection(MIDIPortConnectionState.pending);
         };
 
         _callback_removeSource = function(index) {
             var input = _this._inputs[index];
 
-            input._setState(MIDIPortDeviceState.disconnected);
-            input._setConnection(MIDIPortConnectionState.pending);
-
             _this._inputs.splice(index, 1);
             _this.inputs = _createMIDIPortMap(_this._inputs);
+
+            input._setState(MIDIPortDeviceState.disconnected);
+            input._setConnection(MIDIPortConnectionState.pending);
         };
  
         if (typeof options !== "undefined") {

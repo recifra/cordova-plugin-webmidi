@@ -22,7 +22,7 @@
     }
 
     /*
-    * Checks if the printing service is available.
+    * Initialize ports and listen for events
     */
     - (void) onready:(CDVInvokedUrlCommand *)command
     {

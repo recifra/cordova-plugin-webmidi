@@ -12,6 +12,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '18.x'
+      - run: sed -i -E "s/\"version\"[:]\s*\"[0-9.]+\",/\"version\":\"${GITHUB_REF_NAME#v}\",/g" package.json
       - run: yarn
       - uses: JS-DevTools/npm-publish@v1
         with:
